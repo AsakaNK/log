@@ -12,6 +12,7 @@ const { EmbedBuilder } = require('discord.js');
 const fs = require('fs');
 
 
+
 /* ----------------------------------------------- */
 /* FUNCTIONS                                       */
 /* ----------------------------------------------- */
@@ -38,7 +39,6 @@ async function banLogs(guildBan , client){
 }
 
 async function kickLogs(member, client){
-    if(await member.guild.bans.fetch(member.id)) return;
 
     const LOGS_ID = await getSetupData(member.guild.id, "logs")
     if(LOGS_ID == undefined || LOGS_ID == null) return;
